@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c61b2eca891345fb9ca5ab048b32dd59" Name="Diagram1">
+        <EntityTypeShape EntityType="OnRoadModel.AddService" Width="1.5" PointX="6" PointY="16.5" />
+        <EntityTypeShape EntityType="OnRoadModel.Attributes" Width="1.5" PointX="3.75" PointY="17.875" />
+        <EntityTypeShape EntityType="OnRoadModel.Bodywork" Width="1.5" PointX="3.75" PointY="30" />
+        <EntityTypeShape EntityType="OnRoadModel.Car" Width="1.5" PointX="6" PointY="8.375" />
+        <EntityTypeShape EntityType="OnRoadModel.CarType" Width="1.5" PointX="3.75" PointY="20.375" />
+        <EntityTypeShape EntityType="OnRoadModel.ClientOrder" Width="1.5" PointX="11.25" PointY="10.375" />
+        <EntityTypeShape EntityType="OnRoadModel.Clients" Width="1.5" PointX="9" PointY="0.75" />
+        <EntityTypeShape EntityType="OnRoadModel.Color" Width="1.5" PointX="3.75" PointY="27.375" />
+        <EntityTypeShape EntityType="OnRoadModel.Consultations" Width="1.5" PointX="3" PointY="10.625" />
+        <EntityTypeShape EntityType="OnRoadModel.CountryOfAssembly" Width="1.5" PointX="3.75" PointY="32.25" />
+        <EntityTypeShape EntityType="OnRoadModel.Employee" Width="1.5" PointX="6" PointY="35.25" />
+        <EntityTypeShape EntityType="OnRoadModel.Engine" Width="1.5" PointX="3.75" PointY="22.75" />
+        <EntityTypeShape EntityType="OnRoadModel.Equipment" Width="1.5" PointX="3.75" PointY="14.75" />
+        <EntityTypeShape EntityType="OnRoadModel.Gender" Width="1.5" PointX="6.75" PointY="3.125" />
+        <EntityTypeShape EntityType="OnRoadModel.Insurance" Width="1.5" PointX="8.25" PointY="10.375" />
+        <EntityTypeShape EntityType="OnRoadModel.Model" Width="1.5" PointX="3.75" PointY="25.125" />
+        <EntityTypeShape EntityType="OnRoadModel.Positon" Width="1.5" PointX="3.75" PointY="36.125" />
+        <EntityTypeShape EntityType="OnRoadModel.Sales" Width="1.5" PointX="8.25" PointY="14" />
+        <EntityTypeShape EntityType="OnRoadModel.Status" Width="1.5" PointX="0.75" PointY="10.625" />
+        <EntityTypeShape EntityType="OnRoadModel.Supplier" Width="1.5" PointX="6" PointY="5.75" />
+        <EntityTypeShape EntityType="OnRoadModel.Supply" Width="1.5" PointX="8.25" PointY="6.5" />
+        <EntityTypeShape EntityType="OnRoadModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3" />
+        <AssociationConnector Association="OnRoadModel.FK_Sales_AddService" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_Bodywork" />
+        <AssociationConnector Association="OnRoadModel.FK_Car_Status" />
+        <AssociationConnector Association="OnRoadModel.FK_ClientOrder_Transport" />
+        <AssociationConnector Association="OnRoadModel.FK_Insurance_Transport" />
+        <AssociationConnector Association="OnRoadModel.FK_Sales_Car" />
+        <AssociationConnector Association="OnRoadModel.FK_Supply_Transport" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_Color" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_CountryOfAssembly" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_Engine" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_Equipment" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_Model" />
+        <AssociationConnector Association="OnRoadModel.FK_Transport_TransportType" />
+        <AssociationConnector Association="OnRoadModel.FK_ClientOrder_Clients" />
+        <AssociationConnector Association="OnRoadModel.FK_ClientOrder_Status" />
+        <AssociationConnector Association="OnRoadModel.FK_Clients_Gender" />
+        <AssociationConnector Association="OnRoadModel.FK_Insurance_Clients" />
+        <AssociationConnector Association="OnRoadModel.FK_Sales_Clients" />
+        <AssociationConnector Association="OnRoadModel.FK_Consultations_Status" />
+        <AssociationConnector Association="OnRoadModel.FK_Sales_Employee" />
+        <AssociationConnector Association="OnRoadModel.FK_Workers_Gender" />
+        <AssociationConnector Association="OnRoadModel.FK_Workers_Positon" />
+        <AssociationConnector Association="OnRoadModel.FK_Supply_Supplier" />
+        <AssociationConnector Association="OnRoadModel.TransportAttributes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

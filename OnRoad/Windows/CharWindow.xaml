@@ -1,0 +1,86 @@
+﻿<Window x:Class="OnRoad.Windows.CharWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnRoad.Windows" xmlns:winformchart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+		mc:Ignorable="d"
+		xmlns:ui="http://schemas.modernwpf.com/2019"
+        Title="CharWindow" Height="450" Width="800"
+		WindowStyle="None"
+		>
+
+
+	<ui:ScrollViewerEx  >
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="9*"/>
+			</Grid.RowDefinitions>
+			<StackPanel Orientation="Horizontal">
+				<DatePicker x:Name="StartDate" Margin="10 0 0 0"/>
+				<DatePicker x:Name="EndDate" Margin="10 0 0 0"/>
+				<Button Content="Сформировать" Margin="20 0 0 0" Click="CreateChart"/>
+			</StackPanel>
+			<Button Content="Х" Foreground="Black" 
+						HorizontalAlignment="Right" 
+						Margin="0 0 10 0"
+						Click="ExitClick"/>
+			<StackPanel Orientation="Vertical" Grid.Row="1">
+				<WindowsFormsHost Grid.Row="2" Margin="20" HorizontalAlignment="Stretch" Width="auto">
+					<winformchart:Chart x:Name="GraphicCount">
+						<winformchart:Chart.Series>
+							<winformchart:Series ChartType="Column" BorderWidth="8" IsXValueIndexed="True" IsVisibleInLegend="False" IsValueShownAsLabel="True"/>
+						</winformchart:Chart.Series>
+						<winformchart:Chart.Legends>
+							<winformchart:Legend>
+
+							</winformchart:Legend>
+						</winformchart:Chart.Legends>
+						<winformchart:Chart.ChartAreas>
+							<winformchart:ChartArea>
+
+							</winformchart:ChartArea>
+						</winformchart:Chart.ChartAreas>
+					</winformchart:Chart>
+				</WindowsFormsHost>
+
+				<WindowsFormsHost Grid.Row="2" Margin="20" HorizontalAlignment="Stretch" Width="auto">
+					<winformchart:Chart x:Name="GraphicMoney">
+						<winformchart:Chart.Series>
+							<winformchart:Series ChartType="Column" BorderWidth="8" IsXValueIndexed="True" IsVisibleInLegend="False" IsValueShownAsLabel="True"/>
+						</winformchart:Chart.Series>
+						<winformchart:Chart.Legends>
+							<winformchart:Legend>
+
+							</winformchart:Legend>
+						</winformchart:Chart.Legends>
+						<winformchart:Chart.ChartAreas>
+							<winformchart:ChartArea>
+
+							</winformchart:ChartArea>
+						</winformchart:Chart.ChartAreas>
+					</winformchart:Chart>
+				</WindowsFormsHost>
+
+				<WindowsFormsHost Grid.Row="2" Margin="20" HorizontalAlignment="Stretch" Width="auto">
+					<winformchart:Chart x:Name="GraphicModel">
+						<winformchart:Chart.Series>
+							<winformchart:Series ChartType="Column" BorderWidth="8" IsXValueIndexed="True" IsVisibleInLegend="False" IsValueShownAsLabel="True"/>
+						</winformchart:Chart.Series>
+						<winformchart:Chart.Legends>
+							<winformchart:Legend>
+
+							</winformchart:Legend>
+						</winformchart:Chart.Legends>
+						<winformchart:Chart.ChartAreas>
+							<winformchart:ChartArea>
+
+							</winformchart:ChartArea>
+						</winformchart:Chart.ChartAreas>
+					</winformchart:Chart>
+				</WindowsFormsHost>
+			</StackPanel>
+		</Grid>
+	</ui:ScrollViewerEx>
+</Window>

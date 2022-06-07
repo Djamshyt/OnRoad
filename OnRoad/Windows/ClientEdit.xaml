@@ -1,0 +1,97 @@
+﻿<Window x:Class="OnRoad.Windows.ClientEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnRoad.Windows"
+		xmlns:ui="http://schemas.modernwpf.com/2019"
+        mc:Ignorable="d"
+		Icon="/img/logo.png"
+		WindowStartupLocation="CenterScreen"
+		AllowsTransparency="True" Background="Transparent"
+		WindowStyle="None"
+		ResizeMode="NoResize"
+		Title="ClientEdit" Height="550" Width="380">
+	<ui:ScrollViewerEx>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="10*"/>
+			</Grid.RowDefinitions>
+
+			<Border CornerRadius="10" BorderThickness="2" BorderBrush="Black" Grid.RowSpan="2">
+				<Border.Background>
+					<LinearGradientBrush>
+						<GradientStop Color="White" Offset="0.0"/>
+						<GradientStop Color="#FFFAF4F4" Offset="1"/>
+					</LinearGradientBrush>
+				</Border.Background>
+			</Border>
+			<StackPanel  Margin="0 15 0 20">
+				<TextBlock Text="Редактировать/Добавить:"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="22"
+                           Foreground="Black"
+                           HorizontalAlignment="Center" Margin="68,0"/>
+				<Button Content="Х" Foreground="Black" 
+						HorizontalAlignment="Right" 
+						Margin="0 -40 10 0"
+						Click="ExitClick"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="1" >
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.Surname, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Фамилия"/>
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.Name, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Имя"/>
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.Patronymic, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Отчество"/>
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.Age, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Возраст"/>
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Номер телефона"/>
+				<TextBox FontFamily="Helvetica"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+							Text="{Binding clnt.Mail, UpdateSourceTrigger=PropertyChanged}"
+                          ui:ControlHelper.PlaceholderText="Почта"/>
+                <ComboBox FontFamily="Helvetica"
+						  HorizontalAlignment="Center"
+                            Width="255"
+							Margin="0 0 0 10"
+							Opacity="0.5"
+						 x:Name="GenderBox"/>
+            </StackPanel>
+			<Button Grid.Row="1" 
+					Width="100" 
+					Height="40" 
+					Content="Сохранить" 
+					HorizontalAlignment="Center" 
+					VerticalAlignment="Bottom" 
+					Margin="0 0 0 25"
+					Click="SaveClick"/>
+		</Grid>
+	</ui:ScrollViewerEx>
+</Window>
