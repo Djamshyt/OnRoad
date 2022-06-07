@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "krK1xkf8LYQr/ATr39CYV60UUialbkeeR3wUeywYwyH2M1B9GU7+iYOzGOiaKGEpA5hY7GGDO0XXtPi+q/BytA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KlimowiH\\source\\repos\\OnRoad\\OnRoad\\OnRoad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\docx\\2.1.0\\docx.2.1.0.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\entityframework.ru\\6.2.0\\entityframework.ru.6.2.0.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\modernwpfui\\0.9.4\\modernwpfui.0.9.4.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512",
+    "C:\\Users\\KlimowiH\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

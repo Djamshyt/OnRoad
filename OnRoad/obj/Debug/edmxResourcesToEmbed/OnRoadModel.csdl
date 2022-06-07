@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnRoadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OnRoadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddService" EntityType="OnRoadModel.AddService" />
+    <EntitySet Name="Attributes" EntityType="OnRoadModel.Attributes" />
+    <EntitySet Name="Bodywork" EntityType="OnRoadModel.Bodywork" />
+    <EntitySet Name="Car" EntityType="OnRoadModel.Car" />
+    <EntitySet Name="CarType" EntityType="OnRoadModel.CarType" />
+    <EntitySet Name="ClientOrder" EntityType="OnRoadModel.ClientOrder" />
+    <EntitySet Name="Clients" EntityType="OnRoadModel.Clients" />
+    <EntitySet Name="Color" EntityType="OnRoadModel.Color" />
+    <EntitySet Name="Consultations" EntityType="OnRoadModel.Consultations" />
+    <EntitySet Name="CountryOfAssembly" EntityType="OnRoadModel.CountryOfAssembly" />
+    <EntitySet Name="Employee" EntityType="OnRoadModel.Employee" />
+    <EntitySet Name="Engine" EntityType="OnRoadModel.Engine" />
+    <EntitySet Name="Equipment" EntityType="OnRoadModel.Equipment" />
+    <EntitySet Name="Gender" EntityType="OnRoadModel.Gender" />
+    <EntitySet Name="Insurance" EntityType="OnRoadModel.Insurance" />
+    <EntitySet Name="Model" EntityType="OnRoadModel.Model" />
+    <EntitySet Name="Positon" EntityType="OnRoadModel.Positon" />
+    <EntitySet Name="Sales" EntityType="OnRoadModel.Sales" />
+    <EntitySet Name="Status" EntityType="OnRoadModel.Status" />
+    <EntitySet Name="Supplier" EntityType="OnRoadModel.Supplier" />
+    <EntitySet Name="Supply" EntityType="OnRoadModel.Supply" />
+    <EntitySet Name="sysdiagrams" EntityType="OnRoadModel.sysdiagrams" />
+    <AssociationSet Name="FK_Sales_AddService" Association="OnRoadModel.FK_Sales_AddService">
+      <End Role="AddService" EntitySet="AddService" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Bodywork" Association="OnRoadModel.FK_Transport_Bodywork">
+      <End Role="Bodywork" EntitySet="Bodywork" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_Status" Association="OnRoadModel.FK_Car_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Transport" Association="OnRoadModel.FK_ClientOrder_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Insurance_Transport" Association="OnRoadModel.FK_Insurance_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Insurance" EntitySet="Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Car" Association="OnRoadModel.FK_Sales_Car">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_Transport" Association="OnRoadModel.FK_Supply_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Color" Association="OnRoadModel.FK_Transport_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_CountryOfAssembly" Association="OnRoadModel.FK_Transport_CountryOfAssembly">
+      <End Role="CountryOfAssembly" EntitySet="CountryOfAssembly" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Engine" Association="OnRoadModel.FK_Transport_Engine">
+      <End Role="Engine" EntitySet="Engine" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Equipment" Association="OnRoadModel.FK_Transport_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Model" Association="OnRoadModel.FK_Transport_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_TransportType" Association="OnRoadModel.FK_Transport_TransportType">
+      <End Role="CarType" EntitySet="CarType" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Clients" Association="OnRoadModel.FK_ClientOrder_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Status" Association="OnRoadModel.FK_ClientOrder_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Gender" Association="OnRoadModel.FK_Clients_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Insurance_Clients" Association="OnRoadModel.FK_Insurance_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Insurance" EntitySet="Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Clients" Association="OnRoadModel.FK_Sales_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultations_Status" Association="OnRoadModel.FK_Consultations_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Consultations" EntitySet="Consultations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Employee" Association="OnRoadModel.FK_Sales_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Gender" Association="OnRoadModel.FK_Workers_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Positon" Association="OnRoadModel.FK_Workers_Positon">
+      <End Role="Positon" EntitySet="Positon" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_Supplier" Association="OnRoadModel.FK_Supply_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="TransportAttributes" Association="OnRoadModel.TransportAttributes">
+      <End Role="Attributes" EntitySet="Attributes" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales" Relationship="OnRoadModel.FK_Sales_AddService" FromRole="AddService" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Attributes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.TransportAttributes" FromRole="Attributes" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Bodywork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bodywork1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_Bodywork" FromRole="Bodywork" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCarType" Type="Int32" Nullable="false" />
+    <Property Name="IdModel" Type="Int32" Nullable="false" />
+    <Property Name="IdEngine" Type="Int32" Nullable="false" />
+    <Property Name="IdBodywork" Type="Int32" Nullable="false" />
+    <Property Name="IdEquipment" Type="Int32" Nullable="false" />
+    <Property Name="IdColor" Type="Int32" Nullable="false" />
+    <Property Name="IdCountry" Type="Int32" Nullable="false" />
+    <Property Name="Vin" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="AddCost" Type="Double" Nullable="false" />
+    <Property Name="Sum" Type="Double" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IdStatus" Type="Int32" />
+    <NavigationProperty Name="Bodywork" Relationship="OnRoadModel.FK_Transport_Bodywork" FromRole="Car" ToRole="Bodywork" />
+    <NavigationProperty Name="Status" Relationship="OnRoadModel.FK_Car_Status" FromRole="Car" ToRole="Status" />
+    <NavigationProperty Name="ClientOrder" Relationship="OnRoadModel.FK_ClientOrder_Transport" FromRole="Car" ToRole="ClientOrder" />
+    <NavigationProperty Name="Insurance" Relationship="OnRoadModel.FK_Insurance_Transport" FromRole="Car" ToRole="Insurance" />
+    <NavigationProperty Name="Sales" Relationship="OnRoadModel.FK_Sales_Car" FromRole="Car" ToRole="Sales" />
+    <NavigationProperty Name="Supply" Relationship="OnRoadModel.FK_Supply_Transport" FromRole="Car" ToRole="Supply" />
+    <NavigationProperty Name="Color" Relationship="OnRoadModel.FK_Transport_Color" FromRole="Car" ToRole="Color" />
+    <NavigationProperty Name="CountryOfAssembly" Relationship="OnRoadModel.FK_Transport_CountryOfAssembly" FromRole="Car" ToRole="CountryOfAssembly" />
+    <NavigationProperty Name="Engine" Relationship="OnRoadModel.FK_Transport_Engine" FromRole="Car" ToRole="Engine" />
+    <NavigationProperty Name="Equipment" Relationship="OnRoadModel.FK_Transport_Equipment" FromRole="Car" ToRole="Equipment" />
+    <NavigationProperty Name="Model" Relationship="OnRoadModel.FK_Transport_Model" FromRole="Car" ToRole="Model" />
+    <NavigationProperty Name="CarType" Relationship="OnRoadModel.FK_Transport_TransportType" FromRole="Car" ToRole="CarType" />
+    <NavigationProperty Name="Attributes" Relationship="OnRoadModel.TransportAttributes" FromRole="Car" ToRole="Attributes" />
+  </EntityType>
+  <EntityType Name="CarType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransportType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_TransportType" FromRole="CarType" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="ClientOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdStatus" Type="Int32" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_ClientOrder_Transport" FromRole="ClientOrder" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="OnRoadModel.FK_ClientOrder_Clients" FromRole="ClientOrder" ToRole="Clients" />
+    <NavigationProperty Name="Status" Relationship="OnRoadModel.FK_ClientOrder_Status" FromRole="ClientOrder" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ClientOrder" Relationship="OnRoadModel.FK_ClientOrder_Clients" FromRole="Clients" ToRole="ClientOrder" />
+    <NavigationProperty Name="Gender" Relationship="OnRoadModel.FK_Clients_Gender" FromRole="Clients" ToRole="Gender" />
+    <NavigationProperty Name="Insurance" Relationship="OnRoadModel.FK_Insurance_Clients" FromRole="Clients" ToRole="Insurance" />
+    <NavigationProperty Name="Sales" Relationship="OnRoadModel.FK_Sales_Clients" FromRole="Clients" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Color1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_Color" FromRole="Color" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Consultations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Person_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdStatus" Type="Int32" />
+    <NavigationProperty Name="Status" Relationship="OnRoadModel.FK_Consultations_Status" FromRole="Consultations" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="CountryOfAssembly">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_CountryOfAssembly" FromRole="CountryOfAssembly" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" Nullable="false" />
+    <Property Name="IdPosition" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales" Relationship="OnRoadModel.FK_Sales_Employee" FromRole="Employee" ToRole="Sales" />
+    <NavigationProperty Name="Gender" Relationship="OnRoadModel.FK_Workers_Gender" FromRole="Employee" ToRole="Gender" />
+    <NavigationProperty Name="Positon" Relationship="OnRoadModel.FK_Workers_Positon" FromRole="Employee" ToRole="Positon" />
+  </EntityType>
+  <EntityType Name="Engine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Engine1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_Engine" FromRole="Engine" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VolumeEngine" Type="Double" Nullable="false" />
+    <Property Name="Strong" Type="Int32" Nullable="false" />
+    <Property Name="Transmission" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fuel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Drive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_Equipment" FromRole="Equipment" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender1" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Clients" Relationship="OnRoadModel.FK_Clients_Gender" FromRole="Gender" ToRole="Clients" />
+    <NavigationProperty Name="Employee" Relationship="OnRoadModel.FK_Workers_Gender" FromRole="Gender" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Insurance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Insurance_Transport" FromRole="Insurance" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="OnRoadModel.FK_Insurance_Clients" FromRole="Insurance" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Model1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Transport_Model" FromRole="Model" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Positon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="OnRoadModel.FK_Workers_Positon" FromRole="Positon" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCar" Type="Int32" />
+    <Property Name="IdAddService" Type="Int32" />
+    <Property Name="Sum" Type="Double" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" />
+    <Property Name="PayMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AddService" Relationship="OnRoadModel.FK_Sales_AddService" FromRole="Sales" ToRole="AddService" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Sales_Car" FromRole="Sales" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="OnRoadModel.FK_Sales_Clients" FromRole="Sales" ToRole="Clients" />
+    <NavigationProperty Name="Employee" Relationship="OnRoadModel.FK_Sales_Employee" FromRole="Sales" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Car_Status" FromRole="Status" ToRole="Car" />
+    <NavigationProperty Name="ClientOrder" Relationship="OnRoadModel.FK_ClientOrder_Status" FromRole="Status" ToRole="ClientOrder" />
+    <NavigationProperty Name="Consultations" Relationship="OnRoadModel.FK_Consultations_Status" FromRole="Status" ToRole="Consultations" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Supply" Relationship="OnRoadModel.FK_Supply_Supplier" FromRole="Supplier" ToRole="Supply" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="OnRoadModel.FK_Supply_Transport" FromRole="Supply" ToRole="Car" />
+    <NavigationProperty Name="Supplier" Relationship="OnRoadModel.FK_Supply_Supplier" FromRole="Supply" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Sales_AddService">
+    <End Type="OnRoadModel.AddService" Role="AddService" Multiplicity="0..1" />
+    <End Type="OnRoadModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddService">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdAddService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Bodywork">
+    <End Type="OnRoadModel.Bodywork" Role="Bodywork" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bodywork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdBodywork" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_Status">
+    <End Type="OnRoadModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Transport">
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="OnRoadModel.ClientOrder" Role="ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Insurance_Transport">
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="OnRoadModel.Insurance" Role="Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Insurance">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Car">
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="0..1" />
+    <End Type="OnRoadModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_Transport">
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="OnRoadModel.Supply" Role="Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Color">
+    <End Type="OnRoadModel.Color" Role="Color" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdColor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_CountryOfAssembly">
+    <End Type="OnRoadModel.CountryOfAssembly" Role="CountryOfAssembly" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryOfAssembly">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Engine">
+    <End Type="OnRoadModel.Engine" Role="Engine" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdEngine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Equipment">
+    <End Type="OnRoadModel.Equipment" Role="Equipment" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Model">
+    <End Type="OnRoadModel.Model" Role="Model" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdModel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_TransportType">
+    <End Type="OnRoadModel.CarType" Role="CarType" Multiplicity="1" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdCarType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Clients">
+    <End Type="OnRoadModel.Clients" Role="Clients" Multiplicity="1" />
+    <End Type="OnRoadModel.ClientOrder" Role="ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Status">
+    <End Type="OnRoadModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="OnRoadModel.ClientOrder" Role="ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Gender">
+    <End Type="OnRoadModel.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="OnRoadModel.Clients" Role="Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Insurance_Clients">
+    <End Type="OnRoadModel.Clients" Role="Clients" Multiplicity="1" />
+    <End Type="OnRoadModel.Insurance" Role="Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Insurance">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Clients">
+    <End Type="OnRoadModel.Clients" Role="Clients" Multiplicity="0..1" />
+    <End Type="OnRoadModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultations_Status">
+    <End Type="OnRoadModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="OnRoadModel.Consultations" Role="Consultations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consultations">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Employee">
+    <End Type="OnRoadModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="OnRoadModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Gender">
+    <End Type="OnRoadModel.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="OnRoadModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Positon">
+    <End Type="OnRoadModel.Positon" Role="Positon" Multiplicity="1" />
+    <End Type="OnRoadModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="IdPosition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_Supplier">
+    <End Type="OnRoadModel.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="OnRoadModel.Supply" Role="Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="IdSupplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransportAttributes">
+    <End Type="OnRoadModel.Attributes" Role="Attributes" Multiplicity="*" />
+    <End Type="OnRoadModel.Car" Role="Car" Multiplicity="*" />
+  </Association>
+</Schema>

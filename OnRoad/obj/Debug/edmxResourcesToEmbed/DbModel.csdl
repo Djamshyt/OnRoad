@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OnRoadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddService" EntityType="DbModel.AddService" />
+    <EntitySet Name="Attributes" EntityType="DbModel.Attributes" />
+    <EntitySet Name="Bodywork" EntityType="DbModel.Bodywork" />
+    <EntitySet Name="Car" EntityType="DbModel.Car" />
+    <EntitySet Name="CarType" EntityType="DbModel.CarType" />
+    <EntitySet Name="ClientOrder" EntityType="DbModel.ClientOrder" />
+    <EntitySet Name="Clients" EntityType="DbModel.Clients" />
+    <EntitySet Name="Color" EntityType="DbModel.Color" />
+    <EntitySet Name="CountryOfAssembly" EntityType="DbModel.CountryOfAssembly" />
+    <EntitySet Name="Employee" EntityType="DbModel.Employee" />
+    <EntitySet Name="Engine" EntityType="DbModel.Engine" />
+    <EntitySet Name="Equipment" EntityType="DbModel.Equipment" />
+    <EntitySet Name="Gender" EntityType="DbModel.Gender" />
+    <EntitySet Name="Insurance" EntityType="DbModel.Insurance" />
+    <EntitySet Name="Model" EntityType="DbModel.Model" />
+    <EntitySet Name="Positon" EntityType="DbModel.Positon" />
+    <EntitySet Name="Sales" EntityType="DbModel.Sales" />
+    <EntitySet Name="Supplier" EntityType="DbModel.Supplier" />
+    <EntitySet Name="Supply" EntityType="DbModel.Supply" />
+    <EntitySet Name="sysdiagrams" EntityType="DbModel.sysdiagrams" />
+    <AssociationSet Name="FK_Sales_AddService" Association="DbModel.FK_Sales_AddService">
+      <End Role="AddService" EntitySet="AddService" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Bodywork" Association="DbModel.FK_Transport_Bodywork">
+      <End Role="Bodywork" EntitySet="Bodywork" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Transport" Association="DbModel.FK_ClientOrder_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Insurance_Transport" Association="DbModel.FK_Insurance_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Insurance" EntitySet="Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Car" Association="DbModel.FK_Sales_Car">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_Transport" Association="DbModel.FK_Supply_Transport">
+      <End Role="Car" EntitySet="Car" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Color" Association="DbModel.FK_Transport_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_CountryOfAssembly" Association="DbModel.FK_Transport_CountryOfAssembly">
+      <End Role="CountryOfAssembly" EntitySet="CountryOfAssembly" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Engine" Association="DbModel.FK_Transport_Engine">
+      <End Role="Engine" EntitySet="Engine" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Equipment" Association="DbModel.FK_Transport_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_Model" Association="DbModel.FK_Transport_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_TransportType" Association="DbModel.FK_Transport_TransportType">
+      <End Role="CarType" EntitySet="CarType" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientOrder_Clients" Association="DbModel.FK_ClientOrder_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientOrder" EntitySet="ClientOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Gender" Association="DbModel.FK_Clients_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Insurance_Clients" Association="DbModel.FK_Insurance_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Insurance" EntitySet="Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Clients" Association="DbModel.FK_Sales_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Employee" Association="DbModel.FK_Sales_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Gender" Association="DbModel.FK_Workers_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Positon" Association="DbModel.FK_Workers_Positon">
+      <End Role="Positon" EntitySet="Positon" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supply_Supplier" Association="DbModel.FK_Supply_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Supply" EntitySet="Supply" />
+    </AssociationSet>
+    <AssociationSet Name="TransportAttributes" Association="DbModel.TransportAttributes">
+      <End Role="Attributes" EntitySet="Attributes" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales" Relationship="DbModel.FK_Sales_AddService" FromRole="AddService" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Attributes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="DbModel.TransportAttributes" FromRole="Attributes" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Bodywork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bodywork1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_Bodywork" FromRole="Bodywork" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCarType" Type="Int32" Nullable="false" />
+    <Property Name="IdModel" Type="Int32" Nullable="false" />
+    <Property Name="IdEngine" Type="Int32" Nullable="false" />
+    <Property Name="IdBodywork" Type="Int32" Nullable="false" />
+    <Property Name="IdEquipment" Type="Int32" Nullable="false" />
+    <Property Name="IdColor" Type="Int32" Nullable="false" />
+    <Property Name="IdCountry" Type="Int32" Nullable="false" />
+    <Property Name="Vin" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="AddCost" Type="Double" Nullable="false" />
+    <Property Name="Sum" Type="Double" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Bodywork" Relationship="DbModel.FK_Transport_Bodywork" FromRole="Car" ToRole="Bodywork" />
+    <NavigationProperty Name="ClientOrder" Relationship="DbModel.FK_ClientOrder_Transport" FromRole="Car" ToRole="ClientOrder" />
+    <NavigationProperty Name="Insurance" Relationship="DbModel.FK_Insurance_Transport" FromRole="Car" ToRole="Insurance" />
+    <NavigationProperty Name="Sales" Relationship="DbModel.FK_Sales_Car" FromRole="Car" ToRole="Sales" />
+    <NavigationProperty Name="Supply" Relationship="DbModel.FK_Supply_Transport" FromRole="Car" ToRole="Supply" />
+    <NavigationProperty Name="Color" Relationship="DbModel.FK_Transport_Color" FromRole="Car" ToRole="Color" />
+    <NavigationProperty Name="CountryOfAssembly" Relationship="DbModel.FK_Transport_CountryOfAssembly" FromRole="Car" ToRole="CountryOfAssembly" />
+    <NavigationProperty Name="Engine" Relationship="DbModel.FK_Transport_Engine" FromRole="Car" ToRole="Engine" />
+    <NavigationProperty Name="Equipment" Relationship="DbModel.FK_Transport_Equipment" FromRole="Car" ToRole="Equipment" />
+    <NavigationProperty Name="Model" Relationship="DbModel.FK_Transport_Model" FromRole="Car" ToRole="Model" />
+    <NavigationProperty Name="CarType" Relationship="DbModel.FK_Transport_TransportType" FromRole="Car" ToRole="CarType" />
+    <NavigationProperty Name="Attributes" Relationship="DbModel.TransportAttributes" FromRole="Car" ToRole="Attributes" />
+  </EntityType>
+  <EntityType Name="CarType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransportType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_TransportType" FromRole="CarType" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="ClientOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_ClientOrder_Transport" FromRole="ClientOrder" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="DbModel.FK_ClientOrder_Clients" FromRole="ClientOrder" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ClientOrder" Relationship="DbModel.FK_ClientOrder_Clients" FromRole="Clients" ToRole="ClientOrder" />
+    <NavigationProperty Name="Gender" Relationship="DbModel.FK_Clients_Gender" FromRole="Clients" ToRole="Gender" />
+    <NavigationProperty Name="Insurance" Relationship="DbModel.FK_Insurance_Clients" FromRole="Clients" ToRole="Insurance" />
+    <NavigationProperty Name="Sales" Relationship="DbModel.FK_Sales_Clients" FromRole="Clients" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Color1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_Color" FromRole="Color" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="CountryOfAssembly">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_CountryOfAssembly" FromRole="CountryOfAssembly" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" Nullable="false" />
+    <Property Name="IdPosition" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales" Relationship="DbModel.FK_Sales_Employee" FromRole="Employee" ToRole="Sales" />
+    <NavigationProperty Name="Gender" Relationship="DbModel.FK_Workers_Gender" FromRole="Employee" ToRole="Gender" />
+    <NavigationProperty Name="Positon" Relationship="DbModel.FK_Workers_Positon" FromRole="Employee" ToRole="Positon" />
+  </EntityType>
+  <EntityType Name="Engine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Engine1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_Engine" FromRole="Engine" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VolumeEngine" Type="Double" Nullable="false" />
+    <Property Name="Strong" Type="Int32" Nullable="false" />
+    <Property Name="Transmission" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fuel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Drive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_Equipment" FromRole="Equipment" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender1" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Clients" Relationship="DbModel.FK_Clients_Gender" FromRole="Gender" ToRole="Clients" />
+    <NavigationProperty Name="Employee" Relationship="DbModel.FK_Workers_Gender" FromRole="Gender" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Insurance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Insurance_Transport" FromRole="Insurance" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="DbModel.FK_Insurance_Clients" FromRole="Insurance" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Model1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Transport_Model" FromRole="Model" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Positon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="DbModel.FK_Workers_Positon" FromRole="Positon" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCar" Type="Int32" />
+    <Property Name="IdAddService" Type="Int32" />
+    <Property Name="Sum" Type="Double" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" />
+    <Property Name="PayMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AddService" Relationship="DbModel.FK_Sales_AddService" FromRole="Sales" ToRole="AddService" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Sales_Car" FromRole="Sales" ToRole="Car" />
+    <NavigationProperty Name="Clients" Relationship="DbModel.FK_Sales_Clients" FromRole="Sales" ToRole="Clients" />
+    <NavigationProperty Name="Employee" Relationship="DbModel.FK_Sales_Employee" FromRole="Sales" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Supply" Relationship="DbModel.FK_Supply_Supplier" FromRole="Supplier" ToRole="Supply" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IdTransport" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="DbModel.FK_Supply_Transport" FromRole="Supply" ToRole="Car" />
+    <NavigationProperty Name="Supplier" Relationship="DbModel.FK_Supply_Supplier" FromRole="Supply" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Sales_AddService">
+    <End Type="DbModel.AddService" Role="AddService" Multiplicity="0..1" />
+    <End Type="DbModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddService">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdAddService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Bodywork">
+    <End Type="DbModel.Bodywork" Role="Bodywork" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bodywork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdBodywork" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Transport">
+    <End Type="DbModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="DbModel.ClientOrder" Role="ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Insurance_Transport">
+    <End Type="DbModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="DbModel.Insurance" Role="Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Insurance">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Car">
+    <End Type="DbModel.Car" Role="Car" Multiplicity="0..1" />
+    <End Type="DbModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_Transport">
+    <End Type="DbModel.Car" Role="Car" Multiplicity="1" />
+    <End Type="DbModel.Supply" Role="Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="IdTransport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Color">
+    <End Type="DbModel.Color" Role="Color" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdColor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_CountryOfAssembly">
+    <End Type="DbModel.CountryOfAssembly" Role="CountryOfAssembly" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryOfAssembly">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Engine">
+    <End Type="DbModel.Engine" Role="Engine" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdEngine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Equipment">
+    <End Type="DbModel.Equipment" Role="Equipment" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_Model">
+    <End Type="DbModel.Model" Role="Model" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdModel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_TransportType">
+    <End Type="DbModel.CarType" Role="CarType" Multiplicity="1" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="IdCarType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientOrder_Clients">
+    <End Type="DbModel.Clients" Role="Clients" Multiplicity="1" />
+    <End Type="DbModel.ClientOrder" Role="ClientOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientOrder">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Gender">
+    <End Type="DbModel.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="DbModel.Clients" Role="Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Insurance_Clients">
+    <End Type="DbModel.Clients" Role="Clients" Multiplicity="1" />
+    <End Type="DbModel.Insurance" Role="Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Insurance">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Clients">
+    <End Type="DbModel.Clients" Role="Clients" Multiplicity="0..1" />
+    <End Type="DbModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Employee">
+    <End Type="DbModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DbModel.Sales" Role="Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Gender">
+    <End Type="DbModel.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="DbModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Positon">
+    <End Type="DbModel.Positon" Role="Positon" Multiplicity="1" />
+    <End Type="DbModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="IdPosition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supply_Supplier">
+    <End Type="DbModel.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="DbModel.Supply" Role="Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Supply">
+        <PropertyRef Name="IdSupplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransportAttributes">
+    <End Type="DbModel.Attributes" Role="Attributes" Multiplicity="*" />
+    <End Type="DbModel.Car" Role="Car" Multiplicity="*" />
+  </Association>
+</Schema>
